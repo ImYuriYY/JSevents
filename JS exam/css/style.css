@@ -1,0 +1,636 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+#mainMenu {
+    background-image: url(../images/home/main-menu.jpg);
+}
+#petStore {
+    background-image: url(../images/home/petStore.jpg);
+}
+#hall {
+    background-image: url(../images/home/hall.png);
+}
+#kitchen {
+    background-image: url(../images/home/kitchen.jpg);
+}
+#job {
+    background-image: url(../images/home/job.jpg);
+}
+#shop {
+    background-image: url(../images/home/shop.jpeg);
+}
+.background-location {
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+}
+
+#gameMenu {
+    position: absolute;
+    top: 100px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+}
+.menu-list {
+    list-style: none;
+}
+.menu__item {
+    color: rgb(200, 200, 200);
+    font-size: 20px;
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+}
+.menu__item:hover {
+    color: whitesmoke;
+}
+#author {
+    color: whitesmoke;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    cursor: default;
+}
+
+#hintContainer {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 20%;
+}
+.hint-header-centering {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hint-header {
+    padding: 15px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    background-color: rgba(216, 112, 147, 0.8);
+    border: 2px solid black;
+    border-radius: 15px;
+    color: white;
+}
+.cats-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+.cat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+button {
+    width: 100%;
+    padding: 10px 0;
+    color: whitesmoke;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: rgb(197, 108, 167);
+    transition: .3s;
+    cursor: pointer;
+    font-size: 18px;
+}
+button:hover {
+    background-color: rgb(170, 95, 145);
+}
+.cat-image {
+    width: 200px;
+    height: 200px;
+    pointer-events: none;
+}
+.cat-name-wrapper {
+    width: 100%;
+}
+#selectedName {
+    width: 100%;
+    height: 50px;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: rgb(197, 108, 167);
+    color: whitesmoke;
+    font-size: 20px;
+}
+.cat-description {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 5px;
+    background-color: rgb(197, 108, 167);
+    border: 1px solid black;
+}
+.desc__item {
+    width: 100%;
+    font-size: 20px;
+    color: whitesmoke;
+}
+
+.needs {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    bottom: 20px;
+    width: 15%;
+    height: 200px;
+}
+.need-wrapper {
+    width: calc(100%/3);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.needs-state {
+    width: 8px;
+    height: 100px;
+    background-color: white;
+    border-radius: 5px;
+    position: relative;
+    border: 1px solid grey;
+}
+.need-line {
+    border-radius: 5px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+.need-percent {
+    color: whitesmoke;
+    padding: 10px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 1px 0 1px #000, 
+        0 1px 1px #000, 
+        -1px 0 1px #000, 
+        0 -1px 1px #000;
+}
+.needs-icon-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icon {
+    width: 50px;
+    height: 50px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    pointer-events: none;
+}
+.eat-icon {
+    background-image: url(../images/needs/eat-icon.png);
+}
+#hungerLine {
+    background-color: rgb(83, 54, 37);
+}
+#sleepLine {
+    background-color: rgb(28, 28, 70);
+}
+#happinessLine {
+    background-color: brown;
+}
+.sleep-icon {
+    background-image: url(../images/needs/sleep-icon.png);
+}
+.happiness-icon {
+    background-image: url(../images/needs/happiness-icon.png);
+}
+.cat-position {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+}
+.cat-position img {
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+#userCatName {
+    width: 100%;
+    padding-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: whitesmoke;
+    font-size: 20px;
+    text-shadow: 1px 0 1px #000, 
+    0 1px 1px #000, 
+    -1px 0 1px #000, 
+    0 -1px 1px #000;
+}
+.property-wrapper {
+    width: auto;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+.property {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+}
+.property-quantity {
+    padding-left: 10px;
+    color: whitesmoke;
+    font-size: 20px;
+    text-shadow: 1px 0 1px #000, 
+        0 1px 1px #000, 
+        -1px 0 1px #000, 
+        0 -1px 1px #000;
+}
+.my-money-icon {
+    background-image: url(../images/property/myMoney-icon.png);
+}
+.potion-of-happiness-icon {
+    background-image: url(../images/property/potion-of-happiness.png);
+}
+.feed-pack-icon {
+    width: 50px;
+    height: 50px;
+}
+.feed-pack-icon img {
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+.locations-buttons-wrapper {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    right: 20px;
+    top: 20px;
+}
+.button-wrapper {
+    width: 150px;
+    height: 50px;
+}
+.location-button {
+    width: 100%;
+    border-radius: 0 90px 90px 0;
+    padding: 10px 5px;
+}
+#jobButton {
+    background-color: green;
+}
+#shopButton {
+    background-color: rgb(153, 153, 153);
+}
+#kitchenButton {
+    background-color: rgb(83, 54, 37);
+}
+
+
+.newspaper-clicker-wrapper {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    cursor: pointer;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-right: -50%;
+    filter: drop-shadow(1px 1px 20px rgb(255, 255, 255));
+}
+#newspaperClicker {
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/helper-assets/newspaper-clicker.png);
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+
+.products-wrapper {
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    display: flex;
+}
+.product {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.product p {
+    color: whitesmoke;
+    font-size: 20px;
+    text-shadow: 1px 0 1px #000, 
+        0 1px 1px #000, 
+        -1px 0 1px #000, 
+        0 -1px 1px #000;
+    padding: 10px 0;
+}
+.product-image-wrapper {
+    width: 200px;
+    height: 200px;
+}
+.product-image-wrapper img {
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+}
+.product button {
+    background-color: burlywood;
+    width: 70%;
+}
+
+.dish-wrapper {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    cursor: pointer;
+    top: 80%;
+    left: 80%;
+}
+#catDish {
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/helper-assets/cat-dish.png);
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.potion-wrapper {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    cursor: pointer;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-right: -50%;
+}
+#catPotion {
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/property/potion-of-happiness.png);
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.sleep-button-wrapper {
+    width: 150px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+}
+#sleepButton {
+    width: 100%;
+    border-radius: 0 90px 90px 0;
+    padding: 10px 5px;
+    background-color: rgb(28, 28, 70);
+}
+#sleepButton:hover {
+    background-color: rgb(22, 22, 54);
+}
+#sleepBlind {
+    position: fixed;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+
+.settings-button-wrapper {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+#settingsButton {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    border: 0;
+    background-color: rgba(255, 255, 255, 0);
+    background-image: url(../images/helper-assets/settings-icon.png);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+#settingsBlind, #mainMenuSavesBlind {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.8)
+}
+#closeSettings, #closeMMSaves {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 101;
+}
+#settingsList {
+    width: 25%;
+    list-style: none;
+    z-index: 102;
+}
+.settings__item button {
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+}
+.settings__item button:hover {
+    opacity: 0.7;
+}
+
+#changeCatNameForm {
+    width: 25%;
+    z-index: 102;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#newCatName {
+    padding: 5px;
+    font-size: 20px;
+    outline: none;
+}
+#changeCatNameButton {
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    padding: 30px 0;
+}
+#saves {
+    z-index: 102;
+    width: 80%;
+    height: 80%;
+    background-color: rgb(59, 59, 59);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid black;
+}
+#savesCloseLine {
+    background-color: rgb(39, 39, 39);
+    width: 100%;
+    height: 5%;
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    cursor: pointer;
+}
+.cross-icon {
+    background-image: url(../images/helper-assets/cross-icon.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    pointer-events: none;
+    width: 25px;
+    height: 100%;
+    margin-right: 5px;
+}
+.savesButtonsWrapper {
+    width: 100%;
+    height: 15%;
+    background-color: rgb(39, 39, 39);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid black;
+}
+.savesButtonsWrapper button {
+    width: 300px;
+    height: 50px;
+    border-radius: 0;
+    background-color: rgb(29, 29, 29);
+    padding: 10px 20px;
+}
+.savesButtonsWrapper button:hover {
+    opacity: 0.8;
+}
+.savesButtonsWrapper button:disabled {
+    background-color: rgb(40, 40, 40);
+    cursor: default;
+}
+.savesButtonsWrapper button:disabled:hover {
+    opacity: 1;
+}
+
+#savesWrapper {
+    width: 100%;
+    height: 80%;
+    overflow-y: scroll;
+}
+.save-block-wrapper {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.save-block, .save-block-on-game {
+    width: 95%;
+    height: 50px;
+    background-color: rgb(29, 29, 29);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.save-block-on-game {
+    justify-content: flex-start;
+}
+.save-block, .save-block-on-game p {
+    color: whitesmoke;
+    font-size: 20px;
+    padding: 0 20px;
+}
+.load-game-button {
+    width: 100px;
+    height: 40px;
+    border-radius: 0;
+    background-color: rgb(29, 29, 29);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.delete-save-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 0;
+    background-color: rgb(29, 29, 29);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.load-game-button:hover {
+    background-color: rgb(25, 25, 25);
+}
+.delete-save-button:hover {
+    background-color: rgb(25, 25, 25);
+}
+
+#destructiveCodeBlind {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 200;
+}
+#destructiveCodeNewGame {
+    width: 200px;
+    height: 50px;
+}
